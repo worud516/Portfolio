@@ -27,6 +27,9 @@ public class MemberService {
 
 	public ResultData<Integer> join(String loginId, String loginPw, String name, String nickname, String cellphoneNo,
 			String email) {
+		
+		loginPw = Ut.sha256(loginPw);
+		
 		// 로그인아이디 중복체크
 		Member oldMember = getMemberByLoginId(loginId);
 
@@ -43,7 +46,8 @@ public class MemberService {
 
 		memberRepository.join(loginId, loginPw, name, nickname, cellphoneNo, email);
 		int id = memberRepository.getLastInsertId();
-
+		
+		
 		return ResultData.from("S-1", "회원가입이 완료되었습니다. 다시 로그인 해주세요", "id", id);
 	}
 
@@ -103,6 +107,8 @@ public class MemberService {
     }
 
 	private void setTempPassword(Member actor, String tempPassword) {
-		 memberRepository.modify(actor.getId(), tempPassword, null, null, null, null);
+		tempPassword = Ut.sha256(tempPassword);
+		
+		memberRepository.modify(actor.getId(), tempPassword, null, null, null, null);
 	}
 }
