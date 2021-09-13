@@ -29,7 +29,7 @@
     <div class="h-20 flex container mx-auto">
       <a href="/" class="flex items-center px-3">
         <span>
-          로고
+          JCommunity
         </span>
       </a>
 
@@ -39,7 +39,7 @@
         <li>
           <a class="h-full flex px-3 items-center hover:underline" href="/">
             <span>
-              <i class="fas fa-home"></i>
+              <i class="fas fa-home"></i>홈
             </span>
           </a>
         </li>
@@ -62,7 +62,7 @@
           <li>
             <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/login">
               <span>
-                <i class="fas fa-sign-in-alt"></i>
+                <i class="fas fa-sign-in-alt"></i>로그인
               </span>
             </a>
           </li>
@@ -76,7 +76,7 @@
           <li>
             <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/doLogout">
               <span>
-                <i class="fas fa-sign-out-alt"></i>
+                <i class="fas fa-sign-out-alt"></i>로그아웃
               </span>
             </a>
           </li>
