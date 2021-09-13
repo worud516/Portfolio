@@ -28,7 +28,9 @@
   <header>
     <div class="h-20 flex container mx-auto">
       <a href="/" class="flex items-center px-3">
-        <span>로고</span>
+        <span>
+          로고
+        </span>
       </a>
 
       <div class="flex-grow"></div>
@@ -36,7 +38,9 @@
       <ul class="flex">
         <li>
           <a class="h-full flex px-3 items-center hover:underline" href="/">
-            <span>홈</span>
+            <span>
+              <i class="fas fa-home"></i>
+            </span>
           </a>
         </li>
         <li>
@@ -57,7 +61,9 @@
         <c:if test="${!rq.isLogined()}">
           <li>
             <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/login">
-              <span>로그인</span>
+              <span>
+                <i class="fas fa-sign-in-alt"></i>
+              </span>
             </a>
           </li>
         </c:if>
@@ -69,7 +75,9 @@
           </li>
           <li>
             <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/doLogout">
-              <span>로그아웃</span>
+              <span>
+                <i class="fas fa-sign-out-alt"></i>
+              </span>
             </a>
           </li>
         </c:if>
@@ -79,7 +87,7 @@
 
   <section class="mt-5">
     <div class="container mx-auto px-3">
-      <h1>${pageTitle}페이지</h1>
+      <h1>${pageTitle}</h1>
     </div>
   </section>
 

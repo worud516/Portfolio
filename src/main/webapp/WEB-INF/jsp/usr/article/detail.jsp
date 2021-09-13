@@ -201,7 +201,7 @@
 </section>
 
 <section class="mt-5">
-  <div class="container mx-auto px-3">
+  <div class="container mx-auto px-3 mb-10">
     <h1>댓글 리스트(${replies.size()})</h1>
 
     <table class="table table-fixed w-full">
