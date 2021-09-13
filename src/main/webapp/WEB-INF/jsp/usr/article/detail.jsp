@@ -120,6 +120,7 @@
     </div>
 
     <div class="btns">
+      <a class="btn btn-link" href="../article/list?boardId=${article.boardId}">목록으로</a>
       <c:if test="${article.extra__actorCanModify}">
         <a class="btn btn-link" href="../article/modify?id=${article.id}">게시물 수정</a>
       </c:if>
