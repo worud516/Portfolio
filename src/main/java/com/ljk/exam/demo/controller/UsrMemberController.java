@@ -84,18 +84,23 @@ public class UsrMemberController {
 
 	@RequestMapping("/usr/member/doFindLoginId")
 	@ResponseBody
-	public String doFindLoginId(String name, String email, String replaceUri) {
-		if (Ut.empty(replaceUri)) {
-			replaceUri = "/";
+	public String doFindLoginId(String name, String email) {
+		if (Ut.empty(name)) {
+			return rq.jsHistoryBack("name(을)를 입력해주세요.");
 		}
-
+		
+		if (Ut.empty(email)) {
+			return rq.jsHistoryBack("email(을)를 입력해주세요.");
+		}
+		
+		// 이름과 이메일로 DB에서 회원검색
 		Member member = memberService.getMemberByNameAndEmail(name, email);
 
 		if (member == null) {
 			return rq.jsHistoryBack("일치하는 회원이 존재하지 않습니다.");
 		}
 
-		return rq.jsReplace(Ut.f("회원님의 아이디는 `%s` 입니다.", member.getLoginId()), replaceUri);
+		return rq.jsReplace(Ut.f("회원님의 아이디는 `%s` 입니다.", member.getLoginId()), "/usr/member/login");
 	}
 
 	@RequestMapping("/usr/member/findLoginPw")
@@ -105,9 +110,17 @@ public class UsrMemberController {
 
 	@RequestMapping("/usr/member/doFindLoginPw")
 	@ResponseBody
-	public String doFindLoginPw(String loginId, String name, String email, String replaceUri) {
-		if (Ut.empty(replaceUri)) {
-			replaceUri = "/";
+	public String doFindLoginPw(String loginId, String name, String email) {
+		if (Ut.empty(loginId)) {
+			return rq.jsHistoryBack("loginId(을)를 입력해주세요.");
+		}
+		
+		if (Ut.empty(name)) {
+			return rq.jsHistoryBack("name(을)를 입력해주세요.");
+		}
+		
+		if (Ut.empty(email)) {
+			return rq.jsHistoryBack("email(을)를 입력해주세요.");
 		}
 
 		Member member = memberService.getMemberByLoginId(loginId);
@@ -126,7 +139,7 @@ public class UsrMemberController {
 
 		ResultData notifyTempLoginPwByEmailRs = memberService.notifyTempLoginPwByEmail(member);
 
-		return rq.jsReplace(Ut.f("%s", notifyTempLoginPwByEmailRs.getMsg()), replaceUri);
+		return rq.jsReplace(Ut.f("%s", notifyTempLoginPwByEmailRs.getMsg()), "/usr/member/login");
 	}
 
 	@RequestMapping("/usr/member/doLogin")
@@ -139,13 +152,15 @@ public class UsrMemberController {
 		if (Ut.empty(loginPw)) {
 			return rq.jsHistoryBack("loginPw(을)를 입력해주세요.");
 		}
-
+		// DB에서 입력된 loginID와 같은 회원정보를 가져온다.
 		Member member = memberService.getMemberByLoginId(loginId);
-
+		
+		// 해당 회원정보가 없으면 로그인창으로 메세지와 함께 이동.
 		if (member == null) {
 			return rq.jsHistoryBack("존재하지 않은 로그인아이디 입니다.");
 		}
-
+		
+		// 멤버변수에서 비밀번호를 얻어와 입력된 비밀번호와 같은지 확인.
 		if (member.getLoginPw().equals(loginPw) == false) {
 			return rq.jsHistoryBack("비밀번호가 일치하지 않습니다.");
 		}

@@ -74,7 +74,8 @@ public class Ut {
 			return str;
 		}
 	}
-
+	
+	// 현재의 시간을 기준으로 5분뒤의 시간을 가져옴
 	public static String getDateStrLater(long seconds) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

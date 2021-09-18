@@ -5,12 +5,6 @@
 	value="<span><i class='fas fa-sign-in-alt'></i></span> <span>FIND LOGIN ID</span>" />
 <%@ include file="../common/head.jspf"%>
 
-
-<c:set var="pageTitle"
-	value="<span><i class='fas fa-sign-in-alt'></i></span> <span>FIND LOGIN PW</span>" />
-
-<%@ include file="../common/head.jspf"%>
-
 <script>
 let MemberFindLoginPw__submitFormDone = false;
 function MemberFindLoginPw__submitForm(form) {

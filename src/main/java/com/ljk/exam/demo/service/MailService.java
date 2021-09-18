@@ -71,7 +71,7 @@ public class MailService {
             mail.send();
         } catch (Exception e) {
             e.printStackTrace();
-            return ResultData.from("F-1", "메일이 실패하였습니다.");
+            return ResultData.from("F-1", "메일 발송을 실패하였습니다.");
         }
 
         return ResultData.from("S-1", "메일이 발송되었습니다.");
