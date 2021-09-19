@@ -70,7 +70,7 @@
       </table>
     </div>
 
-    <div class="page-menu mt-3">
+    <div class="page-menu mt-3 mb-3">
       <div class="btn-group justify-center">
         <c:set var="pageMenuArmLen" value="6" />
         <c:set var="startPage" value="${page - pageMenuArmLen >= 1 ? page - pageMenuArmLen : 1}" />
