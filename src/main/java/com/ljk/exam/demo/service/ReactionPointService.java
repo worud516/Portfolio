@@ -39,7 +39,7 @@ public class ReactionPointService {
 			break;
 		}
 
-		return ResultData.from("S-1", "좋아요 처리 되었습니다");
+		return ResultData.from("S-1", "좋아요를 누르셨습니다.");
 	}
 
 	public ResultData addBadReactionPoint(int actorId, String relTypeCode, int relId) {
@@ -51,7 +51,7 @@ public class ReactionPointService {
 			break;
 		}
 
-		return ResultData.from("S-1", "싫어요 처리 되었습니다");
+		return ResultData.from("S-1", "싫어요를 누르셨습니다.");
 	}
 
 	public ResultData deleteGoodReactionPoint(int actorId, String relTypeCode, int relId) {
@@ -75,6 +75,6 @@ public class ReactionPointService {
 			break;
 		}
 
-		return ResultData.from("S-1", "싫어요 취소처리 되었습니다");
+		return ResultData.from("S-1", "싫어요가 취소처리 되었습니다");
 	}
 }
