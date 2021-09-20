@@ -120,7 +120,7 @@ public class UsrReplyController {
 
 	@RequestMapping("/usr/reply/doDelete")
 	@ResponseBody
-	public String doWrite(int id, String replaceUri) {
+	public String doDelete(int id, String replaceUri) {
 		if (Ut.empty(id)) {
 			return rq.jsHistoryBack("id(을)를 입력해주세요.");
 		}
