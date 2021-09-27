@@ -6,7 +6,7 @@
 
 <section class="mt-5">
   <div class="container mx-auto px-3">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae eaque tenetur quis aut quidem sed doloribus? Quasi illo laborum labore iste optio sit dolorum vel nemo aliquid rerum excepturi tempore.
+    안녕하세요 이 커뮤니티 사이트는 이재경의 포트폴리오용 JAVA기반 MVC패턴 구조의 개인 프로젝트입니다.
   </div>
 </section>
 
