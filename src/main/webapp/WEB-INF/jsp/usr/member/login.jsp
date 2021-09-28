@@ -36,7 +36,7 @@
 <div class="section section-login px-2">
   <div class="container mx-auto">
     <form method="POST" action="doLogin" onsubmit="MemberLogin__submitForm(this); return false;">
-      <input type="hidden" name="redirectUri" value="${param.afterLoginUri}" />
+      <input type="hidden" name="redirectUri" value="${param.redirectUri}" />
       <input type="hidden" name="loginPw" />
       <div class="form-control">
         <label class="label"> 로그인아이디 </label>

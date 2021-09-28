@@ -60,7 +60,7 @@
         </li>
         <c:if test="${!rq.isLogined()}">
           <li>
-            <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/login">
+            <a class="h-full flex px-3 items-center hover:underline" href="/usr/member/login?redirectUri=${redirectUri}">
               <span>
                 <i class="fas fa-sign-in-alt"></i>로그인
               </span>

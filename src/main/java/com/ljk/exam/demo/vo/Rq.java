@@ -48,10 +48,17 @@ public class Rq {
 		this.isLogined = isLogined;
 		this.loginedMemberId = loginedMemberId;
 		this.loginedMember = loginedMember;
-
+		
+		String redirectUri = getCurrentUri();
+		
+		if (redirectUri != null) {
+			req.setAttribute("redirectUri", redirectUri);
+			System.out.println(redirectUri);
+		}
+		
 		this.req.setAttribute("rq", this);
 	}
-
+	
 	public void printHistoryBackJs(String msg) {
 		resp.setContentType("text/html; charset=UTF-8");
 		print(Ut.jsHistoryBack(msg));
